@@ -18,4 +18,5 @@ class DTPizzas extends CoreModel
      * @var tables fillables
      */
     protected $fillable = ['id', 'pads_id', 'cheeses_id', 'user_id', 'name', 'calories', 'comment'];
+
 }

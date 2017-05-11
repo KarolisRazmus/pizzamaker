@@ -1,12 +1,13 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\DTUsers;
 use Illuminate\Routing\Controller;
 
 class DTUsersController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /dtusers
+	 * GET /users
 	 *
 	 * @return Response
 	 */
@@ -17,7 +18,7 @@ class DTUsersController extends Controller {
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /dtusers/create
+	 * GET /users/create
 	 *
 	 * @return Response
 	 */
@@ -28,7 +29,7 @@ class DTUsersController extends Controller {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /dtusers
+	 * POST /users
 	 *
 	 * @return Response
 	 */
@@ -39,7 +40,7 @@ class DTUsersController extends Controller {
 
 	/**
 	 * Display the specified resource.
-	 * GET /dtusers/{id}
+	 * GET /users/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -51,7 +52,7 @@ class DTUsersController extends Controller {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /dtusers/{id}/edit
+	 * GET /users/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -63,7 +64,7 @@ class DTUsersController extends Controller {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /dtusers/{id}
+	 * PUT /users/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -75,7 +76,7 @@ class DTUsersController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /dtusers/{id}
+	 * DELETE /users/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -84,5 +85,90 @@ class DTUsersController extends Controller {
 	{
 		//
 	}
+
+//	admin functions starting from this comment
+
+    /**
+     * Display a listing of the resource.
+     * GET /users
+     *
+     * @return Response
+     */
+    public function adminIndex()
+    {
+        $configuration['list'] = DTUsers::get()->toArray();
+
+        return view('content.admin.list', $configuration);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     * GET /users/create
+     *
+     * @return Response
+     */
+    public function adminCreate()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * POST /users
+     *
+     * @return Response
+     */
+    public function adminStore()
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     * GET /users/{id}
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function adminShow($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * GET /users/{id}/edit
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function adminEdit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * PUT /users/{id}
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function adminUpdate($id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * DELETE /users/{id}
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function adminDestroy($id)
+    {
+        //
+    }
 
 }
