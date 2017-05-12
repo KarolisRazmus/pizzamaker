@@ -33,7 +33,7 @@
                         <td class="col-md-2"><button type="button"><a href={{route($view,$row['id'])}}>View</a></button></td>
                         <td class="col-md-2"><button type="button"><a href={{route($edit,$row['id'])}}>Edit</a></button></td>
                         <td class="col-md-2"><button type="button"><a onclick="deleteItem({{route($delete,$row['id'])}})">Delete</a></button></td>
-                        {{--<td><input type="button" value="Delete" onclick="deleteItem({{route($delete,$row['id'])}})"></td>--}}
+                        <td><input type="button" value="Delete" onclick="deleteItem('{{route($delete,$row['id'])}}')"></td>
 
                     </tr>
                 @endforeach

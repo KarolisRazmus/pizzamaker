@@ -171,7 +171,7 @@ class DTIngredientsController extends Controller {
      */
     public function adminDestroy($id)
     {
-        dd($id);
+        DTIngredients::destroy($id);
     }
 
 }
