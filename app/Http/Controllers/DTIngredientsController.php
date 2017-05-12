@@ -97,9 +97,10 @@ class DTIngredientsController extends Controller {
     public function adminIndex()
     {
         $configuration['list'] = DTIngredients::get()->toArray();
-        $configuration['view'] = 'app.ingredients.show';
-        $configuration['edit'] = 'app.ingredients.edit';
-        $configuration['delete'] = 'app.ingredients.delete';
+
+        $formRoute = new DTIngredients();
+
+        $configuration['routeName'] = $formRoute->getRoute();
 
         return view('content.admin.list', $configuration);
     }
@@ -112,7 +113,13 @@ class DTIngredientsController extends Controller {
      */
     public function adminCreate()
     {
-        //
+        $formKeys = new DTIngredients();
+
+        $configuration['formKeys'] = $formKeys->getFillable();
+
+        $configuration['routeName'] = $formKeys->getRoute();
+
+        return view('content.admin.item_form', $configuration);
     }
 
     /**
@@ -135,7 +142,13 @@ class DTIngredientsController extends Controller {
      */
     public function adminShow($id)
     {
-        dd($id);
+        $configuration['item'] = DTIngredients::find($id)->toArray();
+
+        $formRoute = new DTIngredients();
+
+        $configuration['routeName'] = $formRoute->getRoute();
+
+        return view('content.admin.item', $configuration);
     }
 
     /**

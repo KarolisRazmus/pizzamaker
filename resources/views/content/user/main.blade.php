@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title')</title>
-    @include('css')
+    @include('includes.css')
     {{--@include('fonts')--}}
     {{--@include('meta')--}}
 </head>
@@ -12,6 +12,9 @@
 
 <h1>@yield('title')</h1>
 @yield('content')
+
+@yield('includes.js')
+@yield('html_script')
 
 {{--@include('footer')--}}
 </body>

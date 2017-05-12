@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{csrf_token()}}"/>
     <title>@yield('title')</title>
-    @include('css')
+    @include('includes.css')
     {{--@include('fonts')--}}
     {{--@include('meta')--}}
 </head>
@@ -15,8 +15,7 @@
 @yield('content')
 
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+@yield('includes.js')
 @yield('html_script')
 
 {{--@include('footer')--}}

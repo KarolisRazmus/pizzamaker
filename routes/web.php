@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/edit', ['as' => 'app.cheeses.edit', 'uses' => 'DTCheesesController@adminEdit']);
             Route::post('/edit', ['uses' => 'DTCheesesController@adminUpdate']);
 
-            Route::get('/', ['uses' => 'DTCheesesController@adminShow']);
+            Route::get('/', ['as' => 'app.cheeses.show','uses' => 'DTCheesesController@adminShow']);
             Route::delete('/', ['as' => 'app.cheeses.delete', 'uses' => 'DTCheesesController@adminDestroy']);
 
         });
