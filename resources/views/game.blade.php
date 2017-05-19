@@ -7,19 +7,12 @@
 
             <h3>Create new: {{substr($tableName, 0, -1)}}</h3>
 
-            {{ Form::open(array('url' => '/game')) }}
+            {!! Form::open(['url' => route('front-end.' . $tableName . '.store'), 'files' => true]) !!}
 
+            {!! Form::file('image', ['class' => 'form-control'])!!}<br/>
 
-            {{--{!! Form::open(['url' => route('app.' . $tableName . '.store')]) !!}--}}
-
-            {!! Form::file('image')!!}<br/>
-
-            {!! Form::submit('Create' , ['class' => 'btn btn-success']) !!}<br/><br/>
-
-
-            <a class="btn btn-primary" href="{{ url('/game') }}
-{{--{{ route('app.' . $tableName . '.index') }}--}}
-                    ">{{ucfirst($tableName)}} list</a>
+            {!! Form::submit('Create' , ['class' => 'btn btn-success']) !!}
+            <a class="btn btn-primary" href="{{ route('front-end.' . $tableName . '.index') }}">{{ucfirst($tableName)}} list</a>
 
             {!! Form::close() !!}
 

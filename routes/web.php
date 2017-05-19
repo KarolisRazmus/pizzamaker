@@ -19,9 +19,6 @@ Route::get('/', [
     'uses' => 'HomeController@welcomeIndex',
 ]);
 
-Route::get('/game', [
-    'uses' => 'DTResourcesController@create',
-]);
 
 /**
  * Routes for admin role only
@@ -156,6 +153,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'check-role-super-admin'], fu
         });
     });
 
+//    Route::group(['prefix' => 'resources'], function () {
+//
+//        Route::get('/', ['as' => 'app.resources.index','uses' => 'DTResourcesController@adminIndex']);
+//
+//        Route::get('/create', ['as' => 'app.resources.create','uses' => 'DTResourcesController@adminCreate']);
+//        Route::post('/create', ['as' => 'app.resources.store', 'uses' => 'DTResourcesController@adminStore']);
+//
+//        Route::group(['prefix' => '{id}'], function () {
+//
+//            Route::get('/edit', ['as' => 'app.resources.edit', 'uses' => 'DTResourcesController@adminEdit']);
+//            Route::post('/edit', ['as' => 'app.resources.update', 'uses' => 'DTResourcesController@adminUpdate']);
+//
+//            Route::get('/', ['as' => 'app.resources.show', 'uses' => 'DTResourcesController@adminShow']);
+//            Route::delete('/', ['as' => 'app.resources.delete', 'uses' => 'DTResourcesController@adminDestroy']);
+//
+//        });
+//    });
+
 });
 
 
@@ -173,6 +188,24 @@ Route::group(['prefix' => 'pizzas', 'middleware' => ['auth', 'check-role-member'
 
         Route::get('/', ['as' => 'front-end.pizzas.show', 'uses' => 'DTPizzasController@show']);
         Route::delete('/', ['as' => 'front-end.pizzas.delete', 'uses' => 'DTPizzasController@destroy']);
+
+    });
+});
+
+Route::group(['prefix' => 'game'], function () {
+
+    Route::get('/', ['as' => 'front-end.resources.index','uses' => 'DTResourcesController@index']);
+
+    Route::get('/create', ['as' => 'front-end.resources.create','uses' => 'DTResourcesController@create']);
+    Route::post('/create', ['as' => 'front-end.resources.store', 'uses' => 'DTResourcesController@store']);
+
+    Route::group(['prefix' => '{id}'], function () {
+
+        Route::get('/edit', ['as' => 'front-end.resources.edit', 'uses' => 'DTResourcesController@edit']);
+        Route::post('/edit', ['as' => 'front-end.resources.update', 'uses' => 'DTResourcesController@update']);
+
+        Route::get('/', ['as' => 'front-end.resources.show', 'uses' => 'DTResourcesController@show']);
+        Route::delete('/', ['as' => 'front-end.resources.delete', 'uses' => 'DTResourcesController@destroy']);
 
     });
 });

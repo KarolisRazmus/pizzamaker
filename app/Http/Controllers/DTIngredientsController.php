@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\models\DTIngredients;
+use App\models\DTUsersResourcesConnections;
 use Illuminate\Routing\Controller;
 
 class DTIngredientsController extends Controller
@@ -83,6 +84,11 @@ class DTIngredientsController extends Controller
                 return view('admin.createform', $configuration);
             }
         }
+
+        $resource = request()->file('image');
+        $newDTResourcesController = new DTUploadController();
+        $record = $newDTResourcesController->upload($resource);
+        $data['resources_id'] = $record->id;
 
         DTIngredients::create($data);
         $configuration['comment'] = ['message' => trans('Record added successfully')];

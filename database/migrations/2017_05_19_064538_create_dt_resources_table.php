@@ -14,7 +14,7 @@ class CreateDtResourcesTable extends Migration {
 	{
 		Schema::create('dt_resources', function(Blueprint $table)
 		{
-			$table->integer('count')->primary();
+            $table->integer('count', true);
 			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamps();
 			$table->softDeletes();

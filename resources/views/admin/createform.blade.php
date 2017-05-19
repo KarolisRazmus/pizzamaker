@@ -19,7 +19,7 @@
 				</div>
 			@endif
 		
-			{!! Form::open(['url' => route('app.' . $tableName . '.store')]) !!}
+			{!! Form::open(['url' => route('app.' . $tableName . '.store'), 'files' => true]) !!}
 
 
 			@foreach($fields as $field)
@@ -48,12 +48,19 @@
 						{!! Form::password($field, ['class' => 'form-control'])!!}<br/>
 					</div>
 
+				@elseif($field == 'resources_id' and $tableName == 'ingredients')
+					<div class="form-group">
+						{!! Form::file('image', ['class' => 'form-control'])!!}<br/>
+					</div>
+
 				@elseif($field)
-			    	<div class="form-group">
-				        {!! Form::label($field, 'Enter ' . ucfirst($field . ':')) !!}
-				        {!! Form::text($field, '', ['class' => 'form-control'])!!}<br/>
-			        </div>
-			    @endif
+					<div class="form-group">
+							{!! Form::label($field, 'Enter ' . ucfirst($field . ':')) !!}
+							{!! Form::text($field, '', ['class' => 'form-control'])!!}<br/>
+					</div>
+
+				@endif
+
 
 			@endforeach
 
