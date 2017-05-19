@@ -38,4 +38,13 @@ class HomeController extends Controller
 
         return view('home', $configuration);
     }
+
+    public function welcomeIndex()
+    {
+        $configuration['allRolesArray'] = auth()->user()->rolesConnections->pluck('roles_id')->toArray();
+
+//        dd($configuration['allRolesArray']);
+
+        return view('welcome', $configuration);
+    }
 }

@@ -11,9 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', [
+    'uses' => 'HomeController@welcomeIndex',
+]);
+
+Route::get('/game', [
+    'uses' => 'DTResourcesController@create',
+]);
 
 /**
  * Routes for admin role only

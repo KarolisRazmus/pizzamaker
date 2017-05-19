@@ -83,13 +83,13 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/CodeAcademyDreamTeam/pizzamaker">GitHub (CodeAcademyDreamTeam)</a>
+                    <a href="https://github.com/CodeAcademyDreamTeam/pizzamaker">DreamTeam Github</a><br/><br/>
+                    <a href="https://github.com/aivarasvain">Aivaras Github</a><br/>
+                    <a href="https://github.com/monikasmilga">Monika Github</a><br/>
+                    <a href="https://github.com/RamintaRam">Raminta Github</a><br/>
+                    <a href="https://github.com/KarolisRazmus">Karolis Github</a><br/>
                 </div>
-
+<br/>
                 <div>
                     <table>
                         <tr>
@@ -98,20 +98,55 @@
                             <th>List</th>
                         </tr>
                         <tr>
-                            <td class="links"><a href="https://laravel.com/docs">Pizza (as user)</a></td>
-                            <td class="links"><a href="https://laravel.com/docs">Pizza (as user)</a></td>
-                            <td class="links"><a href="http://pizzamaker.dev/pizzas">Pizzas (as user)</a></td>
+                            <td class="links"><a href=http://pizzamaker.dev/pizzas/create">Pizza (as user)</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/pizzas/edit">Pizza (as user)</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/pizzas">Pizzas (as user)</a></td>
                         </tr>
+                        {{--@if(!$allRolesArray == 'member')--}}
+
+                            dd($allRolesArray);
                         <tr>
                             <td class="links"><a href="http://pizzamaker.dev/admin/pizzas/create">Pizza</a></td>
                             <td class="links"><a href="http://pizzamaker.dev/admin/pizzas/edit">Pizza</a></td>
                             <td class="links"><a href="http://pizzamaker.dev/admin/pizzas">Pizzas</a></td>
                         </tr>
                         <tr>
-                            <td class="links"><a href="https://laravel.com/docs">Pizzas</a></td>
-                            <td class="links"><a href="https://laravel.com/docs">Documentation</a></td>
-                            <td class="links"><a href="https://laravel.com/docs">Documentation</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/cheeses/create">Cheeses</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/cheeses/edit">Cheeses</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/cheeses">Cheeses</a></td>
                         </tr>
+                        <tr>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/ingredients/create">Ingredients</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/ingredients/edit">Ingredients</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/ingredients">Ingredients</a></td>
+                        </tr>
+                        <tr>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/pads/create">Pads</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/pads/edit">Pads</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/pads">Pads</a></td>
+                        </tr>
+                        <tr>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/permissions/create">Permissions</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/permissions/edit">Permissions</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/permissions">Permissions</a></td>
+                        </tr>
+                        <tr>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/users/create">Users</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/users/edit">Users</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/users">Users</a></td>
+                        </tr>
+                        <tr>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/roles/create">Roles</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/roles/edit">Roles</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/roles">Roles</a></td>
+                        </tr>
+                        <tr>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/resources/create">Resources</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/resources/edit">Resources</a></td>
+                            <td class="links"><a href="http://pizzamaker.dev/admin/resources">Resources</a></td>
+                        </tr>
+
+                        {{--@endif--}}
 
                     </table>
                 </div>

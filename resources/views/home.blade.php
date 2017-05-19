@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in as {{$rolesList}}!
+                    You are logged in as <b>{{$rolesList}}</b>!
                 </div>
             </div>
         </div>
