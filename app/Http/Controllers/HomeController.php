@@ -23,6 +23,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $allRolesArray = auth()->user()->rolesConnections->pluck('roles_id')->toArray();
+
+        $rolesList = '';
+
+        foreach($allRolesArray as $key=> $value) {
+
+            $rolesList = $rolesList . ' ' . $value . ',';
+        }
+
+        $rolesList = substr($rolesList, 1, -1);
+
+        $configuration['rolesList'] = $rolesList;
+
+        return view('home', $configuration);
     }
 }
