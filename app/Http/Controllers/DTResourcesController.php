@@ -76,11 +76,8 @@ class DTResourcesController extends Controller
     {
         $resource = request()->file('image');
 
-
         $newDTResourcesController = new DTUploadController();
         $record = $newDTResourcesController->upload($resource);
-
-
 
         DTUsersResourcesConnections::create([
            "users_id" => auth()->user()->id,

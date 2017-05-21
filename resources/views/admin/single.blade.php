@@ -17,7 +17,11 @@
                 @foreach($record as $key => $value)
                     <tr>
                         <td>{{$key}}</td>
+                        @if($key == 'resources_id' and $tableName == 'ingredients')
+                            <td><img src={{asset($ingredientImage)}}/></td>
+                        @else
                         <td>{{$value}}</td>
+                        @endif
                     </tr>
                 @endforeach
 

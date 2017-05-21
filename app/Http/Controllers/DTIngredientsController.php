@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\models\DTIngredients;
+use App\models\DTResources;
 use App\models\DTUsersResourcesConnections;
 use Illuminate\Routing\Controller;
 
@@ -73,6 +74,10 @@ class DTIngredientsController extends Controller
     public function adminStore()
     {
         $data = request()->all();
+
+        $data['resources_id'] = request()->file('image');
+
+
         $dataFromModel = new DTIngredients();
 
         $configuration['fields'] = $dataFromModel->getFillable();
@@ -115,6 +120,8 @@ class DTIngredientsController extends Controller
         $configuration['record'] = DTIngredients::find($id)->toArray();
         $configuration['tableName'] = $dataFromModel->getTableName();
 
+        $resourcesTable_id = DTIngredients::find($id)->resources_id;
+        $configuration['ingredientImage'] = DTResources::find($resourcesTable_id)->path;
 
         return view('admin.single', $configuration);
     }

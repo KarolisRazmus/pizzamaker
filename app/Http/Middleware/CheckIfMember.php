@@ -19,7 +19,7 @@ class CheckIfMember
     {
         $roles = auth()->user()->rolesConnections->pluck('roles_id')->toArray();
 
-        if(in_array("member", $roles) or in_array("check-role-member", $roles))
+        if(in_array("member", $roles) or in_array("check-role-member", $roles) or in_array("super-admin",$roles))
 
             return $next($request);
 
