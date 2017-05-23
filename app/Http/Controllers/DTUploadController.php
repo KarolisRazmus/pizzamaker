@@ -18,7 +18,7 @@ class DTUploadController extends Controller
                 "path" => $file->getPath(),
             ];
 
-        $path = 'upload/' . date ("Y/m/d");
+        $path = 'upload/' . date ("Y/m/d/");
 
         $fileName = Carbon::now()->timestamp . '_' . $file->getClientOriginalName();
 
